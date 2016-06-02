@@ -4,9 +4,10 @@ var autoprefixer = require('autoprefixer');
 
 module.exports = {
   devtool: 'cheap-eval-source-map',
+
   entry: [
     'webpack/hot/dev-server',
-    'webpack-dev-server/client?reload=true',
+    'webpack-hot-middleware/client?reload=true',
     path.resolve(__dirname, 'app/js/app.js')
   ],
 
@@ -22,8 +23,14 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/,
       },
-      { test: /\.css$/, loader: 'style-loader!css-loader!postcss-loader' }
+      { test: /\.css$/,
+        loader: 'style-loader!css-loader!postcss-loader'
+      }
     ]
+  },
+
+  resolve: {
+    extensions: ['', '.js', '.jsx'],
   },
 
   postcss: [ autoprefixer ]
