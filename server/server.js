@@ -21,3 +21,18 @@ if (process.env.NODE_ENV !== 'production') {
 
 app.use(json({ limit: '20mb' }));
 app.use(urlencoded({ limit: '20mb', extended: false }));
+
+
+// Routes for react router
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/index.html'));
+});
+
+let port = process.env.PORT || 8000;
+
+// start app
+app.listen(port, (error) => {
+  if (!error) {
+    console.log(`App is running on port ${port}`);
+  }
+});

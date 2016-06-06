@@ -12,9 +12,9 @@ module.exports = {
   ],
 
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js',
-    publicPath: '/build'
+    publicPath: '/public'
   },
 
   module: {
