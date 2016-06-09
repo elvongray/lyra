@@ -4,7 +4,7 @@
   "description": "An instagram client",
   "main": "index.js",
   "scripts": {
-    "start": "node server",
+    "start": "node index.js",
     "eslint": "eslint .",
     "build": "cross-env NODE_ENV=production webpack --config ./webpack.config.prod.js --progress --profile --colors",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -27,6 +27,7 @@
     "body-parser": "^1.15.1",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
+    "react-redux": "^4.4.5",
     "react-router": "^2.4.1",
     "react-router-redux": "^4.0.4",
     "redux": "^3.5.2"

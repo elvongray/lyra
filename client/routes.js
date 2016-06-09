@@ -1,10 +1,13 @@
 import React from 'react';
+
 import { Route, IndexRoute } from 'react-router';
+
+import Login from './containers/LoginContainer';
 
 export default (store) => {
   const requireAuth = (nextState, replace, callback) => {
-    const { user: { isAuthenticated }} = store.getState();
-    if (!isAuthenticated) {
+    //const { user: { isAuthenticated }} = store.getState();
+    if (true) {
       replace({
         pathname: '/login',
         state: { nextPathname: nextState.location.pathname }
@@ -14,8 +17,8 @@ export default (store) => {
   }
 
   const redirectAuth = (nextState, replace, callback) => {
-    const { user: { isAuthenticated }} = store.getState();
-    if (isAuthenticated) {
+    //const { user: { isAuthenticated }} = store.getState();
+    if (false) {
       replace({
         pathname: '/home',
       })
@@ -24,9 +27,8 @@ export default (store) => {
   }
 
   return (
-    <Route path='/' component={App}>
-      <IndexRoute component={Login} onEnter={redirectAuth}/>
-      <Route path='home' component={Home} onEnter={requireAuth}/>
+    <Route path='/' >
+      <Route path="login" component={Login} onEnter={redirectAuth}/>
     </Route>
   );
 }

@@ -24,8 +24,8 @@ app.use(urlencoded({ limit: '20mb', extended: false }));
 
 
 // Routes for react router
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/index.html'));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(process.cwd(), 'public/index.html'));
 });
 
 let port = process.env.PORT || 8000;
