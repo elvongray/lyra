@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import './Login.scss'
+
 
 class Login extends Component {
 
@@ -8,7 +10,11 @@ class Login extends Component {
   }
 
   render() {
-    return <div>Hello World</div>
+    return (
+      <div className="pure-g login-page">
+        <div>Hello world</div>
+      </div>
+    )
   }
 }
 

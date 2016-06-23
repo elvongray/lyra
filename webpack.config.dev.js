@@ -21,12 +21,22 @@ module.exports = {
 
   module: {
     loaders: [
-      { test: /\.jsx?$/,
+      {
+        test: /\.jsx?$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
       },
-      { test: /\.css$/,
+      {
+        test: /\.scss$/,
         loader: 'style-loader!css-loader!postcss-loader'
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)$/,
+        loader: 'url',
+        query: {
+            name: '[hash].[ext]',
+            limit: 10000,
+        }
       }
     ]
   },
