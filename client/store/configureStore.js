@@ -1,8 +1,8 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import { routerMiddleware, routerReducer } from 'react-router-redux';
 
-export default function configureStore(history, initialState={}) {
-  const middleware = [routerMiddleware(history)];
+export default function configureStore(history, initialState={}, sagaMiddleware) {
+  const middleware = [routerMiddleware(history), sagaMiddleware];
 
   const reducers = combineReducers({routing: routerReducer});
 

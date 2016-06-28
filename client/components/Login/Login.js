@@ -14,7 +14,7 @@ class Login extends Component {
           <div className="login-container">
             <div className="login-container__header">Lyra</div>
             <div className="login-container__button">
-              <a className="pure-button" href="#">
+              <a className="btn btn-secondary" href="#">
                 <img className="instagram-logo" src={InstagramLogo}/>
                 Login with Instagram
               </a>

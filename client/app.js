@@ -7,11 +7,14 @@ import { Router, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import intializeRoutes from './routes';
 
+import createSagaMiddleware from 'redux-saga'
+
 import './styles/main.scss';
 
 import configureStore from './store/configureStore';
 
-const store = configureStore(browserHistory);
+const sagaMiddleware = createSagaMiddleware()
+const store = configureStore(browserHistory, {}, sagaMiddleware);
 const history = syncHistoryWithStore(browserHistory, store);
 const routes = intializeRoutes(store);
 

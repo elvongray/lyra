@@ -28,7 +28,7 @@
   .login-container__header {
     height: 200px;
     text-align: center;
-    font-size: 46px;
+    font-size: 80px;
     line-height: 200px;
   }
 
@@ -36,13 +36,14 @@
     width: 100%;
     text-align: center;
 
-    .pure-button {
+    .btn {
       color: #fff;
       background-color: #495482;
       width: 245px;
       padding: 5px 0;
       border-radius: 7px;
       font-family: open-sans;
+      font-size: 16px;
 
       .instagram-logo {
         width: 40px;
