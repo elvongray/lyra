@@ -3,6 +3,8 @@ import path from 'path';
 import express from 'express';
 import {json, urlencoded} from 'body-parser';
 
+import configureRoute from './config/routes';
+
 import webpack from 'webpack';
 import config from '../webpack.config.dev';
 import webpackDevMiddleware from 'webpack-dev-middleware';
@@ -22,6 +24,9 @@ if (process.env.NODE_ENV !== 'production') {
 app.use(json({ limit: '20mb' }));
 app.use(urlencoded({ limit: '20mb', extended: false }));
 
+
+// Configure server route
+configureRoute(app)
 
 // Routes for react router
 app.get('*', (req, res) => {

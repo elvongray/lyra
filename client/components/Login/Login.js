@@ -14,7 +14,8 @@ class Login extends Component {
           <div className="login-container">
             <div className="login-container__header">Lyra</div>
             <div className="login-container__button">
-              <a className="btn btn-secondary" href="#">
+              <a className="btn btn-secondary"
+                href="https://api.instagram.com/oauth/authorize/?client_id=d5a955beecf44a639b389cf919dc2789&redirect_uri=http://localhost:8000/authenticate&response_type=code">
                 <img className="instagram-logo" src={InstagramLogo}/>
                 Login with Instagram
               </a>
