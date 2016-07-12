@@ -1,6 +1,8 @@
 import request from 'request';
 import Secret from '../secrets.js';
 
+import { authenticateUser } from './app/usercontroller';
+
 //Note: don't hardcode the redirect url, also present in login page
 const REDIRECT_URL = 'http://localhost:8000/authenticate';
 
@@ -21,10 +23,10 @@ export default (app) => {
           code: req.query.code
         }
       }, function(err, res, body){
-        console.log(body);
+          return authenticateUser(err, res, body);
       });
     } else if (req.query.error) {
-       res.sendFile(path.join(process.cwd(), 'public/index.html'));
+      res.sendFile(path.join(process.cwd(), 'public/index.html'));
     }
   })
 }

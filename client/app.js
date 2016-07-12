@@ -13,8 +13,9 @@ import './styles/main.scss';
 
 import configureStore from './store/configureStore';
 
+const initialState = window.__REDUX_STATE__
 const sagaMiddleware = createSagaMiddleware()
-const store = configureStore(browserHistory, {}, sagaMiddleware);
+const store = configureStore(browserHistory, initialState, sagaMiddleware);
 const history = syncHistoryWithStore(browserHistory, store);
 const routes = intializeRoutes(store);
 

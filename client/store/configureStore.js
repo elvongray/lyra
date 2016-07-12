@@ -6,7 +6,7 @@ export default function configureStore(history, initialState={}, sagaMiddleware)
 
   const reducers = combineReducers({routing: routerReducer});
 
-  const store = createStore(reducers, {}, compose(
+  const store = createStore(reducers, initialState, compose(
     applyMiddleware(...middleware),
     typeof window === 'object' && typeof window.devToolsExtension !== 'undefined' ? window.devToolsExtension() : f => f
   ));
