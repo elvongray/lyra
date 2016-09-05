@@ -1,5 +1,4 @@
 
-export const authenticateUser = (err, res, body) => {
-
-  return
+export const authenticateUser = (err, res, db) => {
+  console.log(users.data)
 }

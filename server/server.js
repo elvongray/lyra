@@ -10,6 +10,8 @@ import config from '../webpack.config.dev';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 
+import users from './config/db';
+
 const app = express();
 
 if (process.env.NODE_ENV !== 'production') {
@@ -26,7 +28,7 @@ app.use(urlencoded({ limit: '20mb', extended: false }));
 
 
 // Configure server route
-configureRoute(app)
+configureRoute(app, users);
 
 // Routes for react router
 app.get('*', (req, res) => {
